@@ -60,8 +60,8 @@ export default function BurgerSequence() {
       const { width, height } = canvas;
       ctx.clearRect(0, 0, width, height);
 
-      // contain logic
-      const scale = Math.min(width / img.width, height / img.height);
+      // cover logic for the canvas (fills screen on mobile)
+      const scale = Math.max(width / img.width, height / img.height);
       const x = (width / 2) - (img.width / 2) * scale;
       const y = (height / 2) - (img.height / 2) * scale;
       
